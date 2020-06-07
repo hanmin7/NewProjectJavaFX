@@ -5,20 +5,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="350.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library_pack.BookController">
    <children>
       <Label layoutX="37.0" layoutY="24.0" text="도서목록" />
-      <TableView layoutX="37.0" layoutY="61.0" prefHeight="229.0" prefWidth="426.0">
-        <columns>
+      <TableView fx:id="tableView" layoutX="37.0" layoutY="61.0" prefHeight="229.0" prefWidth="530.0">
+       <columns>
           <TableColumn fx:id="id" prefWidth="50.0" text="번호" />
-          <TableColumn fx:id="title" prefWidth="200.0" text="책제목" />
+          <TableColumn fx:id="title" prefWidth="280.0" text="책제목" />
             <TableColumn fx:id="wr" prefWidth="100.0" text="저자" />
-            <TableColumn fx:id="status" prefWidth="75.0" text="대출가능수" />
+            <TableColumn fx:id="status" prefWidth="100.0" text="대출가능수" />
         </columns>
       </TableView>
-      <Button layoutX="197.0" layoutY="304.0" mnemonicParsing="false" text="대출" />
-      <Button layoutX="261.0" layoutY="304.0" mnemonicParsing="false" text="취소" />
-      <Button layoutX="408.0" layoutY="20.0" mnemonicParsing="false" text="로그인" />
+      <Button layoutX="245.0" layoutY="307.0" mnemonicParsing="false" text="대출" />
+      <Button layoutX="309.0" layoutY="307.0" mnemonicParsing="false" text="취소" />
+      <Button layoutX="498.0" layoutY="19.0" mnemonicParsing="false" text="로그인" />
    </children>
 </AnchorPane>
