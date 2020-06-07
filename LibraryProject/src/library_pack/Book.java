@@ -9,14 +9,16 @@ public class Book {
 	private SimpleStringProperty writer;
 	private SimpleIntegerProperty status;
 	private SimpleStringProperty content;
+	private SimpleStringProperty image;
 	
-	public Book (int id, String title, String writer, int status, String content) {
+	public Book (int id, String title, String writer, int status, String content, String image) {
 		super();
 		this.id = new SimpleIntegerProperty(id);
 		this.title = new SimpleStringProperty(title);
 		this.writer = new SimpleStringProperty(writer);
 		this.status = new SimpleIntegerProperty(status);
 		this.content = new SimpleStringProperty(content);
+		this.image = new SimpleStringProperty(image);
 	}
 	
 	public void setId(Integer id) {
@@ -67,6 +69,16 @@ public class Book {
 	}
 	public SimpleStringProperty contentProperty() {
 		return this.content;
+	}
+	
+	public void setImage(String image) {
+		this.content.set(image);
+	}
+	public String getImage() {
+		return this.image.get();
+	}
+	public SimpleStringProperty imageProperty() {
+		return this.image;
 	}
 	
 }
