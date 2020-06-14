@@ -143,6 +143,7 @@ public class BookController implements Initializable {
 		addStage.initOwner(btnList.getScene().getWindow());
 
 		try {
+						
 			Parent parent = FXMLLoader.load(getClass().getResource("List.fxml"));
 			Scene scene = new Scene(parent);
 
@@ -184,7 +185,6 @@ public class BookController implements Initializable {
 
 	public void handleBtnCancelAction(ActionEvent e) {
 		Platform.exit();
-
 	}
 
 }
