@@ -87,37 +87,68 @@ public class BookController implements Initializable {
 		btnList.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				handleBtnListAction(event);
+				handleBtnListAction();
 			}
 		});
 		
-//		tableView.setOnMouseClicked((new EventHandler<MouseEvent>() {
-//
-//			@Override
-//			public void handle(MouseEvent event) {
-//				if (event.getClickCount() == 2) {
-//					
+		tableView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			@Override
+			public void handle(MouseEvent event) {
+				if(event.getClickCount() == 2) {
+					
+					handleBtnListAction();
+					
 //					Stage addStage = new Stage(StageStyle.UTILITY);
 //					addStage.initModality(Modality.WINDOW_MODAL);
 //					addStage.initOwner(btnList.getScene().getWindow());
 //					
 //					try {
-//						Parent cont = FXMLLoader.load(getClass().getResource("Root.fxml"));
-//						
+//						Parent cont = FXMLLoader.load(getClass().getResource("List.fxml"));
 //						Scene scene = new Scene(cont);
 //						addStage.setScene(scene);
 //						addStage.show();
+//						
+//						
+//						
+//						ImageView imageView = (ImageView) cont.lookup("#imageView");
+//						imageView.setImage(new Image("/images/" + book.getImage() + ".jpg"));
 //
+//						Button listBorrow = (Button) cont.lookup("#listBorrow");
+//						listBorrow.setOnAction(new EventHandler<ActionEvent>() {
+//							@Override
+//							public void handle(ActionEvent arg0) {
+//
+//								addStage.close();
+//							}
+//						});
+//
+//						Button listCancel = (Button) cont.lookup("#listCancel");
+//						listCancel.setOnAction(new EventHandler<ActionEvent>() {
+//							@Override
+//							public void handle(ActionEvent arg0) {
+//								addStage.close();
+//							}
+//						});
+//
+//						Label listTitle = (Label) cont.lookup("#listTitle");
+//						listTitle.setText(book.getTitle());
+//
+//						TextArea listContent = (TextArea) cont.lookup("#listContent");
+//						listContent.setWrapText(true);
+//						listContent.setText(book.getContent());
+//						
+//						
+//						
 //					} catch (IOException e) {
 //						e.printStackTrace();
 //					}
-//			} else {
-//				return;
-//			}
-//			}
-//		});
-		
-		
+					
+				} else {
+					return;
+				}
+			}
+		});
+					
 	}// initialize
 
 	public ObservableList<Book> getBookList() {
@@ -137,7 +168,9 @@ public class BookController implements Initializable {
 		return list;
 	} // getBookList
 
-	public void handleBtnListAction(ActionEvent ae) {
+	
+	
+	public void handleBtnListAction() {
 		Stage addStage = new Stage(StageStyle.UTILITY);
 		addStage.initModality(Modality.WINDOW_MODAL);
 		addStage.initOwner(btnList.getScene().getWindow());
